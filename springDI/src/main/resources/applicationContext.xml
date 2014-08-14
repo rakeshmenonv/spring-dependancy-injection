@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+ 
+ 
+    <!-- <bean id="MyXMLApp" class="com.springdev.consume.MyXmlApplication">
+        <constructor-arg>
+            <bean class="com.springdev.service.TextileShop" />
+        </constructor-arg>
+    </bean> -->
+
+    <bean id="Textile" class="com.springdev.service.TextileShop"></bean>
+    <bean id="MyXMLApp" class="com.springdev.consume.MyXmlApplication">
+        <property name="shopService" ref="Textile"></property>
+    </bean> 
+</beans>
